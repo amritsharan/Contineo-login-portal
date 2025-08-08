@@ -1,10 +1,10 @@
 # Contineo Login Portal
 
-A simple Java-based login redirect system for educational or internal portal use.
+A simple Java-based login redirect system that demonstrates conditional user redirection based on username and password.
 
 ## 🌐 Project Overview
 
-This project provides a basic framework for redirecting users after login based on their role or credentials. It is written in Java and can be integrated into larger web applications or systems.
+This project simulates a basic login system where users are redirected to different destinations based on their credentials. Currently, it's a console-based Java program that can later be extended into a full portal with GUI and database support.
 
 ## 📁 File Structure
 
@@ -13,55 +13,77 @@ Contineo-login-portal/
 └── README.md
 
 
+
 ## 🚀 Features
 
-- Simple role-based login redirection
-- Clean and minimal Java code
-- Easy to extend or integrate into larger systems
+- Role-based redirection
+- Hardcoded credential validation
+- Simple and clean Java code
+- Console-based interaction
+
+## 🔐 Login Rule
+
+- ✅ If the **username is `AMRIT`** and **password is `2005`**, the system will redirect to the **Contineo page**.
+- ❌ For all other credentials, access will be **denied**.
 
 ## 🛠️ Prerequisites
 
 - Java JDK 8 or above
-- A terminal or IDE like IntelliJ IDEA / Eclipse
+- A terminal or IDE (e.g., IntelliJ IDEA, Eclipse, VS Code with Java extension)
 
 ## 🔧 How to Run
 
-1. Clone the repository:
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/amritsharan/Contineo-login-portal.git
-**Navigate to the project directory**:
+2. **Navigate to the project directory:**
+   cd Contineo-login-portal
 
-cd Contineo-login-portal
-**Compile the code**:
-javac LoginRedirect.java
-**Run the program**:
+3. **Compile the program:**
+   javac LoginRedirect.java
+4. **Run the program:**
+   java LoginRedirect
 
-java LoginRedirect
-📌 **Example Output**:
+   
+🧪 **Sample Output**
+Valid credentials (AMRIT/2005):
+
 
 Enter username:
 AMRIT
 Enter password:
 2005
-Redirecting to Admin Dashboard...
-📈 Future Enhancements
-GUI-based login portal
+Redirecting to Contineo Page...
+Invalid credentials:
 
-Database connectivity (MySQL/PostgreSQL)
 
-Secure password encryption
+Enter username:
+john
+Enter password:
+1234
+Invalid credentials. Access denied.
 
-Role-based dashboard views
+📈 **Future Enhancements**
+GUI-based login form
 
-🤝 Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Database integration for real user data
 
-📄 License
+Password hashing & encryption
+
+Session management
+
+Unit tests
+
+🤝**Contributing**
+Contributions are welcome! Feel free to fork the repo and submit pull requests.
+
+📄 **License**
 This project is open-source and available under the MIT License.
 
 Made with ❤️ by Amrit
 
-
 ---
 
-If you like this, let me know — I can generate the `LICENSE` file or guide you through adding a `src/` structure or M
+Let me know if you want me to generate and upload this file for you (`README.md`) or also create a LICENSE file.
+
+
