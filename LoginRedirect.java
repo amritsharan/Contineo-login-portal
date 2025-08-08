@@ -1,35 +1,40 @@
-import java.util.Scanner;
-import java.awt.Desktop;
-import java.net.URI;
+import javax.swing.*; 
+import java.awt.*; 
+import java.net.URI; 
 
-public class LoginRedirect {
+class LoginApp { 
+    public static void main(String[] args) { 
+        JFrame frame = new JFrame("Login"); 
+        JTextField usernameField = new JTextField(); 
+        JPasswordField passwordField = new JPasswordField(); 
+        JButton loginButton = new JButton("Login"); 
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        frame.setLayout(new GridLayout(3, 2, 10, 10));
+        frame.add(new JLabel("Username:")); 
+        frame.add(usernameField); 
+        frame.add(new JLabel("Password:")); 
+        frame.add(passwordField); 
+        frame.add(loginButton); 
 
-        System.out.print("Enter username: ");
-        String username = scanner.nextLine();
+        frame.setSize(300, 150); 
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+        frame.setLocationRelativeTo(null); 
+        frame.setVisible(true); 
 
-        System.out.print("Enter password: ");
-        String password = scanner.nextLine();
+        loginButton.addActionListener(e -> { 
+            String username = usernameField.getText(); 
+            String password = new String(passwordField.getPassword()); 
 
-        if(username.equals("AMRIT") && password.equals("2005")) {
-            System.out.println("Login successful! Redirecting to Contineo portal...");
-            System.out.println("Opening URL: https://sims.sit.ac.in/parents/index.php");
-            openWebpage("https://sims.sit.ac.in/parents/index.php");
-        }else {
-            System.out.println("Invalid username or password.");
-        }
-
-        scanner.close();
-    }
-
-    public static void openWebpage(String url) {
-        try {
-            Desktop desktop = Desktop.getDesktop();
-            desktop.browse(new URI(url));
-        } catch (Exception e) {
-            System.out.println("Failed to open browser: " + e.getMessage());
-        }
-    }
+            if (username.equals("Amrit") && password.equals("password")) { 
+                try { 
+                    Desktop.getDesktop().browse(new URI("https://sims.sit.ac.in/parents/")); 
+                } catch (Exception ex) { 
+                    ex.printStackTrace(); 
+                } 
+            } else { 
+                JOptionPane.showMessageDialog(frame, "Invalid Credentials"); 
+            } 
+        });
+    } 
 }
+
